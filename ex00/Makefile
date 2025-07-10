@@ -10,15 +10,11 @@ NAME = easy
 CPP = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98 -Wshadow -g3
 
-INC_DIR = ./inc
-HEADERS = $(INC_DIR)/data.hpp \
-			$(INC_DIR)/Bureaucrat.hpp \
+INC_DIR = ./includes
+HEADERS = $(INC_DIR)/easyfind.hpp
 			
-SRC_DIR = ./src
-SRCS = $(SRC_DIR)/main.cpp \
-		$(SRC_DIR)/data.cpp \
-		$(SRC_DIR)/Bureaucrat.cpp \
-		$(SRC_DIR)/BureaucratUtils.cpp
+SRC_DIR = ./sources
+SRCS = $(SRC_DIR)/main.cpp
 			
 OBJ_DIR = ./obj
 OBJS = $(SRCS:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
