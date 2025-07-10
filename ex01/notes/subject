@@ -1,0 +1,16 @@
+CPP08/ex00
+
+	STL is allowed and you have to use it
+	Algorithm library is allowed and have to use it
+
+	 Write an function template easyfind(T*, int)
+		- T is a container of int
+		- easyfind returns first occurrence of second param in the first param
+		- return is an exception if not found
+			- but a normal error message is find if too much
+		- (should behave like a standard container) 
+
+
+	Important: You don't have to handle associative containers
+		- What on earth is an associative container
+		- Oh, like maps and sets
