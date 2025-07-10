@@ -1,6 +1,50 @@
 #include "Span.hpp"
 #include <iostream>
+#include <fstream>
+#include <sstream>
 #include <vector>
+
+/*
+	std::istringstream	intStream(input);
+	int intValue;
+
+	if ((intStream >> intValue) && intStream.eof())
+		return (INT);
+*/
+
+void	bigTest(void)
+{
+	std::string		fileName;
+	std::ifstream	fileStream;
+	std::string		line;
+	Span			sp(10000);
+
+	std::cout << "You're running a big test. Enter a file name: ";
+	std::cin >> fileName;
+	
+	fileStream.open(fileName.c_str(), std::ifstream::in);
+
+	try
+	{
+		while (getline(fileStream, line))
+		{
+			std::istringstream	intStream(line);
+			int					intValue;
+
+			intStream >> intValue;
+			sp.addNumber(intValue);
+		}
+		std::cout << "Shortest span:\n" << sp.shortestSpan() << std::endl;
+		std::cout << "Longest span:\n"  << sp.longestSpan() << std::endl;
+	}
+	catch (const std::exception& e)
+	{
+		std::cerr << "\t\t!!!Exception Caught: " << e.what() << std::endl;
+	}
+
+	fileStream.close();
+	return ;
+}
 
 int	main(void)
 {
@@ -66,5 +110,6 @@ int	main(void)
 	{
 		std::cerr << "\t\t!!!Exception Caught: " << e.what() << std::endl;
 	}
+	bigTest();
 	return (0);
 }
