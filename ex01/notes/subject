@@ -1,16 +1,22 @@
-CPP08/ex00
+CPP08/ex01
 
 	STL is allowed and you have to use it
 	Algorithm library is allowed and have to use it
 
-	 Write an function template easyfind(T*, int)
-		- T is a container of int
-		- easyfind returns first occurrence of second param in the first param
-		- return is an exception if not found
-			- but a normal error message is find if too much
-		- (should behave like a standard container) 
+	Span Class
+		store a max of N unsigned int
+			only ctor value
+		methods:
+			addNumber()
+				add a single number to the Span
+					until it's fill of course, if it's full, throw an exception
+			shortestSpan()	
+				shortest distance between two numbers	
+				if there is 0 or 1 numbers throw exception 
+			longestSpan()
+				longest distance between two numbers	
+				if there is 0 or 1 numbers throw exception 
+			
+		test with 10,000 or more numbers
 
 
-	Important: You don't have to handle associative containers
-		- What on earth is an associative container
-		- Oh, like maps and sets

@@ -6,15 +6,16 @@ PURPLE = \033[0;35m
 CYAN = \033[0;36m
 NORMAL = \033[0m
 
-NAME = easy 
+NAME = span 
 CPP = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98 -Wshadow -g3
 
 INC_DIR = ./includes
-HEADERS = $(INC_DIR)/easyfind.hpp
+HEADERS = $(INC_DIR)/Span.hpp
 			
 SRC_DIR = ./sources
-SRCS = $(SRC_DIR)/main.cpp
+SRCS = $(SRC_DIR)/main.cpp \
+		$(SRC_DIR)/Span.cpp
 			
 OBJ_DIR = ./obj
 OBJS = $(SRCS:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)

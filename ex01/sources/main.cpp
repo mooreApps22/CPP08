@@ -1,35 +1,70 @@
-#include "easyfind.hpp"
+#include "Span.hpp"
 #include <iostream>
 #include <vector>
-#include <deque>
-
-void	prompter(int& input, bool loading)
-{
-	if (loading)
-		std::cout << "Pick an integer to load --> ";
-	else
-		std::cout << "Pick an integer to find --> ";
-	std::cin >> input;
-}
 
 int	main(void)
 {
-	std::deque<int> grades;
-	int input;
-
-	for (int i = 0; i < 5; ++i)
+	try
 	{
-		prompter(input, true);
-		grades.push_back(input);
-	}
-	prompter(input, false);
+		std::cout << "\nTEST 1: " << std::endl;
 
-	try {
-		std::deque<int>::iterator it = easyfind(grades, input);
-		std::cout << "Located: " << *it << std::endl;
+		Span sp1 = Span(8);
+
+		sp1.addNumber(1);
+		sp1.addNumber(100);
+		sp1.addNumber(150);
+		sp1.addNumber(175);
+		sp1.addNumber(182);
+		sp1.addNumber(191);
+		sp1.addNumber(196);
+		sp1.addNumber(200);
+		std::cout << "Shortest span:\n" << sp1.shortestSpan() << std::endl;
+		std::cout << "Longest span:\n"  << sp1.longestSpan() << std::endl;
 	}
-	catch (const std::exception& e) {
-		std::cerr << e.what() << std::endl;
+	catch (const std::exception& e)
+	{
+		std::cerr << "\t\t!!!Exception Caught: " << e.what() << std::endl;
+	}
+	try
+	{
+		std::cout << "\nTEST 2: " << std::endl;
+
+		Span sp2 = Span(0);
+
+		std::cout << "Shortest span:\n" << sp2.shortestSpan() << std::endl;
+		std::cout << "Longest span:\n" << sp2.longestSpan() << std::endl;
+	}
+	catch (const std::exception& e)
+	{
+		std::cerr << "\t\t!!!Exception Caught: " << e.what() << std::endl;
+	}
+	try
+	{
+		std::cout << "\nTEST 3: " << std::endl;
+
+		Span sp3 = Span(1);
+		
+		sp3.addNumber(666);
+		std::cout << "Shortest span:\n" << sp3.shortestSpan() << std::endl;
+		std::cout << "Longest span:\n"  << sp3.longestSpan() << std::endl;
+	}
+	catch (const std::exception& e)
+	{
+		std::cerr << "\t\t!!!Exception Caught: " << e.what() << std::endl;
+	}
+	try
+	{
+		std::cout << "\nTEST 4: " << std::endl;
+		Span sp4 = Span(2);
+
+		sp4.addNumber(7);
+		sp4.addNumber(3);
+		std::cout << "Shortest span:\n" << sp4.shortestSpan() << std::endl;
+		std::cout << "Longtest span:\n" << sp4.longestSpan() << std::endl;
+	}
+	catch (const std::exception& e)
+	{
+		std::cerr << "\t\t!!!Exception Caught: " << e.what() << std::endl;
 	}
 	return (0);
 }
