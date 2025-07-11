@@ -1,0 +1,11 @@
+42London CPP08/ex02 - Mutated Abomination
+
+	you have to make the std::stack container iterable
+
+	Write a MutantStack class
+		has to be implemented in terms of std::stack
+		added feature: iterators
+
+	If you replace a MutantStack object with a std::list object, they should behave the same
+		of course, you have to switch out corresponding member functions (like push() to push_back())
+
